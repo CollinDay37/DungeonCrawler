@@ -21,7 +21,7 @@ public class Dungeon {
 			System.out.print("###########\n#");
 				for(Object x:dungeon1){
 					if(x == null) 
-						System.out.print("_");
+						System.out.print("-");
 					else if(x == h) 
 						System.out.print("H");
 					else
