@@ -15,8 +15,8 @@ public class Launcher{
 		
 		boolean running = true;
 		int counter = 0;
-		System.out.println("Welcome to Dungeon Crawler!");
-		System.out.println("Goal: Make it to the end of the room and kill anything in your path.");
+		System.out.println("Welcome to the Dungeon Crawler!");
+		System.out.println("Goal: Make it to the end of the room and kill anything in your path!");
 		
 		while(running) {
 			System.out.println("Type 1 to move left. \nType 2 to move right.");	
