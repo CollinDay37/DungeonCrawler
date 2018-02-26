@@ -1,5 +1,5 @@
 # DungeonCrawler
-The DungeonCrawler has 5 main classes; Beings, Dungeon, Hero, Launcher, and Monster.
+The DungeonCrawler has five main classes; Beings, Dungeon, Hero, Launcher, and Monster.
 The goal of the game is make it through to the end of the room and kill anything that comes in your path. 
 You will be able to tell what is in your path by these three symbols the Monster = 'M', the Hero = 'H', and null = '-'
 While walking through the room if the hero comes into contact with '-' that means the space is empty and the hero will continue walking unharmed.
