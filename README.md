@@ -9,12 +9,15 @@ If the hero doesn't win the fight it will die, if the hero does win it will keep
 If you make it to the end of the room without dying you win the game!
 
 Getting Started
+
 These instructions will get you a copy of the game up and running on your local machine for development and testing purposes. See development for notes on how to deploy the game on a live system.
 
-Prerequisites 
+Prerequisites
+
 What things you need to install the software and how to install them
 
 Installing
+
 A step by step series of examples
 
 Running the tests
