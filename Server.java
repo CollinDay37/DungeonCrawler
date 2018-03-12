@@ -16,7 +16,7 @@ public class Server
     public static DatagramPacket dataPacket;
     public static BufferedReader dataInput;
     public static InetAddress addr;
-    public static byte buff[] = new byte [1024];
+    public static byte buf[] = new byte [1024];
     public static int CPORT = 3000, SPORT = 2000;
     
     public Server () throws IOException
@@ -25,13 +25,21 @@ public class Server
         //Creates DatagramPacket
         //Creates BufferedReader
         ServerSocket = new DatagramSocket(SPORT);
-        dataPacket = new DatagramPacket(buff,buff.length);
-        dataInput = new BufferedReader(new InputStreamReader(System.in));
+        
+        try (
+        socket clientSocket = serverSocket.accept();
+        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            )
+        DatagramPacket = new DatagramPacket(buf,buf.length);
+        socket.receive(packet);
+      
         
         //begin InetAddress
-        addr = InetAddress.getLocalHost();
-        System.out.println("Server is running");
-        System.out.println("Port Number:\t" + SPORT);
+        InetAddress address = packet.getAddress();
+        int port = packet.getPort();
+        packet = new DatagramPacket(buf, buf.length, address, port);
+        socket.send(packet);
         System.out.println("IP Address:\t" + addr);
         
         //receive dataPacket to ServerSocket
