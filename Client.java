@@ -18,7 +18,7 @@ public class Client
     public static BufferedReader dataInput;
     public static InetAddress addr;
     public static int CPORT = 3000, SPORT = 2000;
-    public static byte buff[] = new byte[1024];
+    public static byte buf[] = new byte[1024];
     public static String ServerIP = "10.0.0.86";
     
     public Client () throws IOException
@@ -27,7 +27,7 @@ public class Client
         //Creates dataPacket
         //Creates dataInput
         ClientSocket = new DatagramSocket(CPORT);
-        dataPacket = new DatagramPacket(buff, buff.length);
+        dataPacket = new DatagramPacket(buf, buf.length);
         dataInput = new BufferedReader(new InputStreamReader(System.in));
         addr = InetAddress.getByName(ServerIP);
         
@@ -40,10 +40,10 @@ public class Client
             if(str.equals("Stop"))
             {
                 System.out.println("Finished");
-                ClientSocket.send(new DatagramPacket(buff,str.length(), addr, SPORT));
+                ClientSocket.send(new DatagramPacket(buf,str.length(), addr, SPORT));
                 break;
             }//end of if loop 
-            ClientSocket.send(new DatagramPacket(buff,str.length(),addr, SPORT));
+            ClientSocket.send(new DatagramPacket(buf,str.length(),addr, SPORT));
             ClientSocket.receive(dataPacket);
             String str2 = new String(dataPacket.getData(), 0,dataPacket.getLength());
             System.out.println("Server: " + str2);
