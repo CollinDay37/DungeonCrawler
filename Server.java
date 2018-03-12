@@ -47,8 +47,10 @@ public class Server
         //Messages from the packet will be turned into strings
         while(true)
         {
+            packet = new DatagramPacket(buf, buf.length);
             ServerSocket.receive(dataPacket);
-            addr = dataPacket.getAddress();
+            String received = new String(packet.getData(), 0 ,packet.getLength());
+            System.out.println("packet:" + received); 
             
             String str = new String(dataPacket.getData(), 0, dataPacket.getLength()).trim();
             if(str.equals("Stop"))
