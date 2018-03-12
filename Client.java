@@ -26,6 +26,7 @@ public class Client
         //Creates ClientSocket
         //Creates dataPacket
         //Creates dataInput
+        
         ClientSocket = new DatagramSocket(CPORT);
         dataPacket = new DatagramPacket(buf, buf.length);
         dataInput = new BufferedReader(new InputStreamReader(System.in));
